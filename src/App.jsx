@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { Form } from "./components/Form";
 import { ListTasks } from "./components/ListTasks";
 import { useRefreshTasks } from "./hooks/useRefreshTasks";
+import "./App.css";
 
 function App() {
   // Custom hooks
@@ -17,11 +18,13 @@ function App() {
 
   return (
     <main>
-      <header>
-        <h1>TODO</h1>
-      </header>
+      <section className="app_wrapper">
+        <header>
+          <h1>TODO</h1>
+        </header>
 
-      <Form />
+        <Form />
+      </section>
 
       {tasks.length > 0 && <ListTasks />}
     </main>

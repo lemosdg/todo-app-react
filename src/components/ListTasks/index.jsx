@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { updateTask } from "../../services/updateTask";
 import { deleteTask } from "../../services/deleteTask";
 import { useRefreshTasks } from "../../hooks/useRefreshTasks";
+import "./index.css";
+import { Task } from "../Task";
 
 export const ListTasks = () => {
   const { refresTasks } = useRefreshTasks();
@@ -13,13 +14,6 @@ export const ListTasks = () => {
     refresTasks();
   }, []);
 
-  const updateTaskState = async ({ done, id }) => {
-    const response = await updateTask({ done: !done, id });
-    if (response.id > 0) {
-      refresTasks();
-    }
-  };
-
   const removeTask = async ({ id }) => {
     const response = await deleteTask({ id });
     if (response.ok) {
@@ -28,16 +22,18 @@ export const ListTasks = () => {
   };
 
   return (
-    <ul>
-      {tasks?.map(({ id, description, done }) => (
-        <li key={id}>
-          <p>{description}</p>
-          <button onClick={() => updateTaskState({ done, id })}>
-            {done ? "completed" : "done"}
-          </button>
-          <button onClick={() => removeTask({ id })}>x</button>
-        </li>
-      ))}
-    </ul>
+    <section className="listTasks">
+      <ul className="listTasks_wrapper">
+        {tasks?.map(({ id, description, done }) => (
+          <Task
+            key={id}
+            id={id}
+            description={description}
+            done={done}
+            removeTask={removeTask}
+          />
+        ))}
+      </ul>
+    </section>
   );
 };

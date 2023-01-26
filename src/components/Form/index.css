@@ -1,0 +1,28 @@
+.form {
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background-color: white;
+}
+
+.form_button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid whitesmoke;
+  background-color: transparent;
+}
+
+.form_button_active {
+  background-color: blue;
+}
+
+.form_input {
+  width: 100%;
+  border: none;
+  padding: 8px;
+  outline: none;
+  background-color: transparent;
+}

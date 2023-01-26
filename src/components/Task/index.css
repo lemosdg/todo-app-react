@@ -1,0 +1,27 @@
+.task {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-bottom: 1px solid rgb(206, 206, 206);
+  display: flex;
+  justify-content: space-between;
+}
+
+.task_wrapper {
+  display: flex;
+  gap: 18px
+}
+
+.task_button {
+  background-color: transparent;
+  border: none;
+}
+
+.task_button_img {
+  width: 12px;
+}
+
+.task_description_done {
+  text-decoration: line-through;
+}

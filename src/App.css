@@ -1,0 +1,10 @@
+.app_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 220px;
+  padding: 0px 20px;
+  background-image: url(../src/assets/bg-mobile-light.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
