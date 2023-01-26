@@ -1,15 +1,15 @@
-export async function createTask({ description, done }) {
+export async function createTask ({ description, done }) {
   try {
     const response = await fetch(import.meta.env.VITE_API_URL, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ description, done }),
-    });
-    const json = await response.json();
-    return json;
+      body: JSON.stringify({ description, done })
+    })
+    const json = await response.json()
+    return json
   } catch (err) {
-    return console.log(err);
+    return console.log(err)
   }
 }

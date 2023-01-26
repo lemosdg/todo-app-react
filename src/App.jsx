@@ -1,90 +1,29 @@
-import { useEffect, useState } from "react";
-import { getTasks } from "./services/getTasks";
-import { updateTask } from "./services/updateTask";
-import { deleteTask } from "./services/deleteTask";
-import { createTask } from "./services/createTask";
-import { useSelector, useDispatch } from "react-redux";
-import { setTasks } from "./features/tasks/tasksSlice";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { Form } from "./components/Form";
+import { ListTasks } from "./components/ListTasks";
+import { useRefreshTasks } from "./hooks/useRefreshTasks";
 
 function App() {
-  const [description, setDescription] = useState("");
-  const [isDone, setIsDone] = useState(false);
+  // Custom hooks
+  const { refresTasks } = useRefreshTasks();
 
   // Redux
   const tasks = useSelector((state) => state.tasks.value);
-  const dispatch = useDispatch();
 
   useEffect(() => {
-    getAllTasks();
+    refresTasks();
   }, []);
-
-  const onSubmit = async (e) => {
-    e.preventDefault();
-
-    if (description.trim().length > 0) {
-      const response = await createTask({ description, done: isDone });
-
-      if (response.id !== undefined) {
-        getAllTasks();
-        setDescription("");
-        setIsDone(false);
-      }
-    }
-  };
-
-  const updateTaskState = async ({ done, id }) => {
-    const response = await updateTask({ done: !done, id });
-    if (response.id > 0) {
-      getAllTasks();
-    }
-  };
-
-  const getAllTasks = () => {
-    getTasks().then((newTasks) => {
-      return dispatch(setTasks(newTasks));
-    });
-  };
-
-  const removeTask = async ({ id }) => {
-    const response = await deleteTask({ id });
-    if (response.ok) {
-      getAllTasks();
-    }
-  };
 
   return (
     <main>
-      <section>
-        <form onSubmit={onSubmit}>
-          <input
-            type="checkbox"
-            value={isDone}
-            checked={isDone}
-            name="isDone"
-            onChange={(e) => setIsDone(e.target.checked)}
-          />
-          <input
-            type="text"
-            value={description}
-            name="description"
-            onChange={(e) => setDescription(e.target.value)}
-          />
-        </form>
-      </section>
+      <header>
+        <h1>TODO</h1>
+      </header>
 
-      {tasks.length > 0 && (
-        <ul>
-          {tasks?.map(({ id, description, done }) => (
-            <li key={id}>
-              <p>{description}</p>
-              <button onClick={() => updateTaskState({ done, id })}>
-                {done ? "completed" : "done"}
-              </button>
-              <button onClick={() => removeTask({ id })}>x</button>
-            </li>
-          ))}
-        </ul>
-      )}
+      <Form />
+
+      {tasks.length > 0 && <ListTasks />}
     </main>
   );
 }
