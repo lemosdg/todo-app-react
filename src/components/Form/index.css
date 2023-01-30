@@ -1,7 +1,7 @@
 .form {
   width: 90%;
   margin: 0 auto;
-  padding: 10px 20px;
+  padding: 0 20px;
   border-radius: 8px;
   display: flex;
   gap: 10px;
@@ -12,12 +12,16 @@
 .form_input {
   width: 100%;
   border: none;
-  padding: 8px;
+  padding: 25px;
   outline: none;
   background-color: transparent;
   font-family: var(--font);
   font-weight: var(--font_medium);
   font-size: 1rem;
+}
+
+.form_input:focus {
+  background-color: transparent;
 }
 
 .form_input::placeholder {

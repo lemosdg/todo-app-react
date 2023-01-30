@@ -39,6 +39,7 @@ export const Form = () => {
         placeholder="Crete a new todo..."
         className="form_input"
         onChange={(e) => setDescription(e.target.value)}
+        required
       />
     </form>
   );
