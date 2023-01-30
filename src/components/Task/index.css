@@ -1,16 +1,17 @@
 .task {
   padding: 20px;
   display: flex;
-  align-items: center;
   background-color: var(--very_light_gray);
   border-bottom: 1px solid var(--light_grayish_blue);
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .task_wrapper {
   display: flex;
-  gap: 18px
+  gap: 18px;
+  align-items: center;
 }
 
 .task_button {
