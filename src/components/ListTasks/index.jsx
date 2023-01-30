@@ -2,8 +2,9 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { deleteTask } from "../../services/deleteTask";
 import { useRefreshTasks } from "../../hooks/useRefreshTasks";
-import "./index.css";
 import { Task } from "../Task";
+import { FooterTasks } from "../FooterTasks";
+import "./index.css";
 
 export const ListTasks = () => {
   const { refresTasks } = useRefreshTasks();
@@ -33,6 +34,7 @@ export const ListTasks = () => {
             removeTask={removeTask}
           />
         ))}
+        <FooterTasks />
       </ul>
     </section>
   );

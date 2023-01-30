@@ -1,0 +1,28 @@
+.footer_tasks {
+  padding: 20px;
+}
+
+.footer_tasks_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  top: 4px;
+}
+
+.footer_tasks_items {
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: var(--font_medium);
+  color: var(--dark_grayish_blue);
+}
+
+.footer_tasks_button {
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: var(--font_medium);
+  color: var(--dark_grayish_blue);
+  border: none;
+  outline: none;
+  background: transparent;
+}
