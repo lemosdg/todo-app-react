@@ -1,0 +1,20 @@
+.header {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_title {
+  font-family: var(--font);
+  font-weight: var(--font_bold);
+  font-size: 38px;
+  color: var(--very_light_gray);
+  text-transform: capitalize;
+}
+
+.header_img {
+  width: 28px;
+  height: 28px;
+}

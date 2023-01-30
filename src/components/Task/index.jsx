@@ -19,7 +19,11 @@ export const Task = ({ id, description, done, removeTask }) => {
       <section className="task_wrapper">
         <ButtonDone done={done} onClick={updateTaskState} />
 
-        <p className={done ? "task_description_done" : "task_description"}>
+        <p
+          className={
+            done ? "task_description task_description_done" : "task_description"
+          }
+        >
           {description}
         </p>
       </section>

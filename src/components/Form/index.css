@@ -6,19 +6,7 @@
   display: flex;
   gap: 10px;
   align-items: center;
-  background-color: white;
-}
-
-.form_button {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 1px solid whitesmoke;
-  background-color: transparent;
-}
-
-.form_button_active {
-  background-color: blue;
+  background-color: var(--very_light_gray);
 }
 
 .form_input {
@@ -27,4 +15,11 @@
   padding: 8px;
   outline: none;
   background-color: transparent;
+  font-family: var(--font);
+  font-weight: var(--font_medium);
+  font-size: 18px;
+}
+
+.form_input::placeholder {
+  color: var(--dark_grayish_blue);
 }

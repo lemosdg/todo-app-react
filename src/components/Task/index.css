@@ -2,8 +2,8 @@
   padding: 10px 20px;
   display: flex;
   align-items: center;
-  background-color: white;
-  border-bottom: 1px solid rgb(206, 206, 206);
+  background-color: var(--very_light_gray);
+  border-bottom: 1px solid var(--light_grayish_blue);
   display: flex;
   justify-content: space-between;
 }
@@ -19,9 +19,17 @@
 }
 
 .task_button_img {
-  width: 12px;
+  width: 15px;
+}
+
+.task_description {
+  font-family: var(--font);
+  font-size: 18px;
+  font-weight: var(--font_bold);
+  color: var(--very_dark_grayish_blue);
 }
 
 .task_description_done {
   text-decoration: line-through;
+  color: var(--light_grayish_blue);
 }

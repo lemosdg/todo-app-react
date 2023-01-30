@@ -3,3 +3,35 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
+:root {
+  --font: "Josefin Sans", sans-serif;
+  --font_medium: 400;
+  --font_bold: 700;
+
+  /* Colors */
+  /* Primary */
+  --bright_blue: hsl(220, 98%, 61%);
+  --check_background: linear-gradient(
+    80deg,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+
+  /* Neutral */
+
+  /* Light Theme */
+
+  --very_light_gray: hsl(0, 0%, 98%);
+  --very_light_grayish_blue: hsl(236, 33%, 92%);
+  --light_grayish_blue: hsl(233, 11%, 84%);
+  --dark_grayish_blue: hsl(236, 9%, 61%);
+  --very_dark_grayish_blue: hsl(235, 19%, 35%);
+}
+
+body {
+  font-family: var(--font);
+  font-size: 18px;
+}
