@@ -1,0 +1,13 @@
+.filter_tasks_button {
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: var(--font_bold);
+  color: var(--dark_grayish_blue);
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.button_active {
+  color: var(--bright_blue);
+}

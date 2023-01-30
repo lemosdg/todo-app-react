@@ -5,6 +5,7 @@ import { useRefreshTasks } from "../../hooks/useRefreshTasks";
 import { Task } from "../Task";
 import { FooterTasks } from "../FooterTasks";
 import "./index.css";
+import { FilterTasks } from "../FilterTasks";
 
 export const ListTasks = () => {
   const { refresTasks } = useRefreshTasks();
@@ -35,6 +36,7 @@ export const ListTasks = () => {
           />
         ))}
         <FooterTasks />
+        <FilterTasks />
       </ul>
     </section>
   );
