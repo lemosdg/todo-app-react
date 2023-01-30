@@ -17,7 +17,7 @@
   background-color: transparent;
   font-family: var(--font);
   font-weight: var(--font_medium);
-  font-size: 18px;
+  font-size: 1rem;
 }
 
 .form_input::placeholder {

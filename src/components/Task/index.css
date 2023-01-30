@@ -1,5 +1,5 @@
 .task {
-  padding: 10px 20px;
+  padding: 20px;
   display: flex;
   align-items: center;
   background-color: var(--very_light_gray);
@@ -24,7 +24,7 @@
 
 .task_description {
   font-family: var(--font);
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: var(--font_bold);
   color: var(--very_dark_grayish_blue);
 }
@@ -32,4 +32,5 @@
 .task_description_done {
   text-decoration: line-through;
   color: var(--light_grayish_blue);
+  font-weight: var(--font_medium);
 }
