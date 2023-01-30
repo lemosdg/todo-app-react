@@ -4,6 +4,7 @@ import "./index.css";
 export const ButtonDone = ({ done, onClick }) => {
   return (
     <button
+      type="button"
       className={done ? "button_done active" : "button_done"}
       onClick={onClick}
     >

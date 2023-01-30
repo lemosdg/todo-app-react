@@ -25,11 +25,7 @@ export const Form = () => {
   };
 
   const handleChangeIsDone = () => {
-    if (isDone) {
-      setIsDone(false);
-    } else {
-      setIsDone(true);
-    }
+    setIsDone(!isDone);
   };
 
   return (
