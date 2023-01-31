@@ -7,3 +7,14 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+@media (min-width: 64rem) {
+  .app_wrapper {
+    background-image: url(../src/assets/bg-desktop-light.jpg);
+    background-size: contain;
+    height: 305px;
+    justify-content: flex-start;
+    gap: 40px;
+    padding-top: 80px;
+  }
+}

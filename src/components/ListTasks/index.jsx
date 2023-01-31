@@ -37,6 +37,10 @@ export const ListTasks = () => {
         ))}
         <FooterTasks />
         <FilterTasks />
+
+        <section className="listTasks_content_text">
+          <p className="listTasks_text">Drag and drop to reorder list</p>
+        </section>
       </ul>
     </section>
   );

@@ -27,3 +27,14 @@
 .form_input::placeholder {
   color: var(--dark_grayish_blue);
 }
+
+@media (min-width: 64rem) {
+  .form {
+    width: 40%;
+  }
+
+  .form_input {
+    font-size: 1.125rem;
+    padding: 22px;
+  }
+}
