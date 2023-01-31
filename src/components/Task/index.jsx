@@ -4,7 +4,7 @@ import { updateTask } from "../../services/updateTask";
 import { ButtonDone } from "../ButtonDone";
 import "./index.css";
 
-export const Task = ({ id, description, done, removeTask }) => {
+export const Task = ({ id, description, done }) => {
   const { refresTasks } = useRefreshTasks();
 
   const updateTaskState = async () => {
@@ -14,8 +14,15 @@ export const Task = ({ id, description, done, removeTask }) => {
     }
   };
 
+  const removeTask = async () => {
+    const response = await deleteTask({ id });
+    if (response.ok) {
+      refresTasks();
+    }
+  };
+
   return (
-    <li className="task">
+    <div className="task">
       <section className="task_wrapper">
         <ButtonDone done={done} onClick={updateTaskState} />
 
@@ -28,13 +35,13 @@ export const Task = ({ id, description, done, removeTask }) => {
         </p>
       </section>
 
-      <button className="task_button" onClick={() => removeTask({ id })}>
+      <button className="task_button" onClick={removeTask}>
         <img
           className="task_button_img"
           src={iconCross}
           alt="Delete this task"
         />
       </button>
-    </li>
+    </div>
   );
 };
