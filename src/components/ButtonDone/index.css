@@ -7,11 +7,22 @@
 }
 
 .button_done:hover {
-  border-color:var(--bright_blue);
+  border-color: var(--bright_blue);
   cursor: pointer;
   transition: 0.3s all ease-in;
 }
 
 .active {
   background: var(--check_background);
+}
+
+@media (prefers-color-scheme: dark) {
+  .button_done.dark-scheme {
+    border-color: var(--dark_very_dark_grayish_blue);
+  }
+  .button_done:hover {
+    border-color: var(--bright_blue);
+    cursor: pointer;
+    transition: 0.3s all ease-in;
+  }
 }
