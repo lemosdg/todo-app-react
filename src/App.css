@@ -22,3 +22,15 @@
     padding-top: 80px;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .app_wrapper.dark-scheme {
+    background-image: url(../src/assets/bg-mobile-dark.jpg);
+  }
+
+  @media (min-width: 64rem) {
+    .app_wrapper.dark-scheme {
+      background-image: url(../src/assets/bg-desktop-dark.jpg);
+    }
+  }
+}
