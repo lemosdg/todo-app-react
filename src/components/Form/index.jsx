@@ -1,14 +1,19 @@
 import { useState } from "react";
-import { useRefreshTasks } from "../../hooks/useRefreshTasks";
-import { createTask } from "../../services/createTask";
+
 import { ButtonDone } from "../ButtonDone";
+
+import { useRefreshTasks } from "../../hooks/useRefreshTasks";
+import { useScheme } from "../../hooks/useScheme";
+import { createTask } from "../../services/createTask";
 import "./index.css";
 
 export const Form = () => {
   const [description, setDescription] = useState("");
   const [isDone, setIsDone] = useState(false);
 
+  // custom hooks
   const { refresTasks } = useRefreshTasks();
+  const { scheme } = useScheme();
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -29,7 +34,7 @@ export const Form = () => {
   };
 
   return (
-    <form onSubmit={onSubmit} className="form">
+    <form onSubmit={onSubmit} className={`form ${scheme}`}>
       <ButtonDone done={isDone} onClick={handleChangeIsDone} />
 
       <input
@@ -37,7 +42,7 @@ export const Form = () => {
         value={description}
         name="description"
         placeholder="Crete a new todo..."
-        className="form_input"
+        className={`form_input ${scheme}`}
         onChange={(e) => setDescription(e.target.value)}
         required
       />

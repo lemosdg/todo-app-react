@@ -12,8 +12,9 @@
 .form_input {
   width: 100%;
   border: none;
-  padding: 25px;
+  padding: 25px 10px;
   outline: none;
+  color: var(--very_dark_grayish_blue);
   background-color: transparent;
   font-family: var(--font);
   font-weight: var(--font_medium);
@@ -42,5 +43,14 @@
   .form_input {
     font-size: 1.125rem;
     padding: 22px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .form.dark-scheme {
+    background-color: var(--dark_very_dark_desaturated_blue);
+  }
+  .form_input.dark-scheme {
+    color: var(--dark_light_grayish_blue);
   }
 }
