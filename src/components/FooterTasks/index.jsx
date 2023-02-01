@@ -1,4 +1,5 @@
 import { useCountTasks } from "../../hooks/useCountTasks";
+import { ButtonClear } from "../ButtonClear";
 import "./index.css";
 
 export const FooterTasks = () => {
@@ -8,7 +9,8 @@ export const FooterTasks = () => {
     <footer className="footer_tasks">
       <section className="footer_tasks_wrapper">
         <span className="footer_tasks_items">{tasksLeft} items left</span>
-        <button className="footer_tasks_button">Clear Completed</button>
+
+        <ButtonClear />
       </section>
     </footer>
   );

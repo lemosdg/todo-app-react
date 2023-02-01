@@ -1,0 +1,22 @@
+.buttonClear {
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: var(--font_medium);
+  color: var(--dark_grayish_blue);
+  border: none;
+  outline: none;
+  background: transparent;
+  grid-area: clear;
+}
+
+.buttonClear:hover {
+  color: var(--very_dark_grayish_blue);
+}
+
+.not_allowed {
+  cursor: not-allowed;
+}
+
+.not_allowed:hover {
+  color: var(--dark_grayish_blue);
+}
