@@ -1,10 +1,15 @@
-import iconCross from "../../assets/icon-cross.svg";
+import { useState } from "react";
+
+import { ButtonDone } from "../ButtonDone";
+import { ButtonRemove } from "../ButtonRemove";
+
 import { useRefreshTasks } from "../../hooks/useRefreshTasks";
 import { updateTask } from "../../services/updateTask";
-import { ButtonDone } from "../ButtonDone";
+import { deleteTask } from "../../services/deleteTask";
 import "./index.css";
 
 export const Task = ({ id, description, done }) => {
+  const [showBtnRemove, setShowBtnRemove] = useState(false);
   const { refresTasks } = useRefreshTasks();
 
   const updateTaskState = async () => {
@@ -21,8 +26,16 @@ export const Task = ({ id, description, done }) => {
     }
   };
 
+  const onMouseOver = () => {
+    setShowBtnRemove(true);
+  };
+
+  const onMouseLeave = () => {
+    setShowBtnRemove(false);
+  };
+
   return (
-    <div className="task">
+    <div className="task" onMouseOver={onMouseOver} onMouseLeave={onMouseLeave}>
       <section className="task_wrapper">
         <ButtonDone done={done} onClick={updateTaskState} />
 
@@ -35,13 +48,7 @@ export const Task = ({ id, description, done }) => {
         </p>
       </section>
 
-      <button className="task_button" onClick={removeTask}>
-        <img
-          className="task_button_img"
-          src={iconCross}
-          alt="Delete this task"
-        />
-      </button>
+      {showBtnRemove && <ButtonRemove onClick={removeTask} />}
     </div>
   );
 };

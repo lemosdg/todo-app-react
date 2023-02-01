@@ -1,0 +1,12 @@
+.buttonRemove {
+  background-color: transparent;
+  border: none;
+}
+
+.buttonRemove:hover {
+  cursor: pointer;
+}
+
+.buttonRemove_img {
+  width: 15px;
+}
