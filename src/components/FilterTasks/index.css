@@ -7,7 +7,6 @@
   display: flex;
   place-content: center;
   background: var(--very_light_gray);
-  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.15);
 }
 
 .filter_tasks_wrapper {
@@ -30,5 +29,11 @@
   .filter_tasks_wrapper {
     gap: 30px;
     width: fit-content;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .filter_tasks.dark-scheme {
+    background: var(--dark_very_dark_desaturated_blue);
   }
 }
