@@ -25,7 +25,7 @@ function App() {
         <Form />
       </section>
 
-      {tasks.length > 0 && <ListTasks />}
+      <ListTasks />
     </main>
   );
 }
