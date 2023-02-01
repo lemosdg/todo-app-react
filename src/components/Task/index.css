@@ -1,7 +1,7 @@
 .task {
   padding: 20px;
   display: flex;
-  background-color: var(--very_light_gray);
+  background: var(--very_light_gray);
   border-bottom: 1px solid var(--light_grayish_blue);
   display: flex;
   justify-content: space-between;
@@ -17,7 +17,7 @@
 .task_description {
   font-family: var(--font);
   font-size: 1rem;
-  font-weight: var(--font_bold);
+  font-weight: var(--font_medium);
   color: var(--very_dark_grayish_blue);
 }
 
@@ -25,4 +25,17 @@
   text-decoration: line-through;
   color: var(--light_grayish_blue);
   font-weight: var(--font_medium);
+}
+
+@media (prefers-color-scheme: dark) {
+  .task.dark-scheme {
+    background: var(--dark_very_dark_desaturated_blue);
+    border-color: var(--dark_very_dark_grayish_blue);
+  }
+  .task_description.dark-scheme {
+    color: var(--dark_light_grayish_blue);
+  }
+  .task_description_done.dark-scheme {
+    color: var(--dark_dark_grayish_blue);
+  }
 }
