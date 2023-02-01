@@ -3,7 +3,13 @@
   height: 25px;
   border-radius: 50%;
   border: 1px solid var(--light_grayish_blue);
-  background-color: transparent;
+  background: transparent;
+}
+
+.button_done:hover {
+  border-color:var(--bright_blue);
+  cursor: pointer;
+  transition: 0.3s all ease-in;
 }
 
 .active {
