@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { setScheme } from "../context/reducers/scheme/schemeSlice";
 
-const DARK_SCHEME = "dark-scheme";
+export const DARK_SCHEME = "dark-scheme";
 const INITIAL_SCHEME = "";
 
 export const useScheme = () => {

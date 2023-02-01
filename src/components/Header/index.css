@@ -13,6 +13,16 @@
   color: var(--very_light_gray);
 }
 
+.header_button {
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.header_button:hover {
+  cursor: pointer;
+}
+
 .header_img {
   width: 28px;
   height: 28px;
