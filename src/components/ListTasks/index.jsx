@@ -6,7 +6,7 @@ import { Task } from "../Task";
 import { FooterTasks } from "../FooterTasks";
 import { FilterTasks } from "../FilterTasks";
 
-import { setTasks } from "../../features/tasks/tasksSlice";
+import { setTasks } from "../../context/reducers/tasks/tasksSlice";
 import { useRefreshTasks } from "../../hooks/useRefreshTasks";
 import { reorder } from "../../lib/reorder_list";
 import "./index.css";

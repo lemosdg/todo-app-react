@@ -1,6 +1,7 @@
-import { getTasks } from "../services/getTasks";
 import { useDispatch } from "react-redux";
-import { setTasks } from "../features/tasks/tasksSlice";
+
+import { getTasks } from "../services/getTasks";
+import { setTasks } from "../context/reducers/tasks/tasksSlice";
 
 export const useRefreshTasks = () => {
   const dispatch = useDispatch();

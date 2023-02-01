@@ -1,6 +1,7 @@
-import { useSelector, useDispatch } from "react-redux";
-import { setTasks } from "../features/tasks/tasksSlice";
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+
+import { setTasks } from "../context/reducers/tasks/tasksSlice";
 import { useRefreshTasks } from "./useRefreshTasks";
 import { getTasks } from "../services/getTasks";
 
