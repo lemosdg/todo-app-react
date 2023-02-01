@@ -8,11 +8,15 @@ import { FilterTasks } from "../FilterTasks";
 
 import { setTasks } from "../../context/reducers/tasks/tasksSlice";
 import { useRefreshTasks } from "../../hooks/useRefreshTasks";
+import { useScheme } from "../../hooks/useScheme";
 import { reorder } from "../../lib/reorder_list";
 import "./index.css";
 
 export const ListTasks = () => {
+  // Custom hooks
   const { refresTasks } = useRefreshTasks();
+  const { scheme } = useScheme();
+
   // Redux
   const tasks = useSelector((state) => state.tasks.value);
   const dispatch = useDispatch();
@@ -41,14 +45,14 @@ export const ListTasks = () => {
   };
 
   return (
-    <section className="listTasks">
+    <section className={`listTasks ${scheme}`}>
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="list">
           {(droppableProvided) => (
             <ul
               {...droppableProvided.droppableProps}
               ref={droppableProvided.innerRef}
-              className="listTasks_wrapper"
+              className={`listTasks_wrapper ${scheme}`}
             >
               {tasks?.map((task, index) => (
                 <Draggable
@@ -76,8 +80,10 @@ export const ListTasks = () => {
               <FooterTasks />
               <FilterTasks />
 
-              <section className="listTasks_content_text">
-                <p className="listTasks_text">Drag and drop to reorder list</p>
+              <section className={`listTasks_content_text ${scheme}`}>
+                <p className={`listTasks_text ${scheme}`}>
+                  Drag and drop to reorder list
+                </p>
               </section>
             </ul>
           )}

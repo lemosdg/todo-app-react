@@ -1,6 +1,6 @@
 .listTasks {
   width: 100%;
-  margin-bottom: 20px;
+  min-height: 100vh;
   position: relative;
   display: flex;
   place-content: center;
@@ -14,8 +14,8 @@
   width: 90%;
   padding: 8px 0;
   border-radius: 8px;
-  background-color: var(--very_light_gray);
-  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.15);
+  background: var(--very_light_gray);
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.1);
 }
 
 .listTasks_content_text {
@@ -48,5 +48,14 @@
   .listTasks_wrapper {
     top: -60px;
     width: 40%;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .listTasks.dark-scheme {
+    background: var(--dark_very_dark_blue);
+  }
+  .listTasks_wrapper.dark-scheme {
+    background: var(--dark_very_dark_desaturated_blue);
   }
 }
