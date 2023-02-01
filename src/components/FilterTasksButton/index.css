@@ -8,6 +8,16 @@
   background: transparent;
 }
 
+.filter_tasks_button:hover {
+  color: var(--very_dark_grayish_blue);
+  cursor: pointer;
+  transition: .3s all ease-in;
+}
+
 .button_active {
+  color: var(--bright_blue);
+}
+
+.button_active:hover {
   color: var(--bright_blue);
 }
