@@ -11,6 +11,8 @@
 
 .buttonClear:hover {
   color: var(--very_dark_grayish_blue);
+  cursor: pointer;
+  transition: 0.3s all ease-in;
 }
 
 .not_allowed {
@@ -19,4 +21,10 @@
 
 .not_allowed:hover {
   color: var(--dark_grayish_blue);
+}
+
+@media (prefers-color-scheme: dark) {
+  .buttonClear:hover.dark-scheme {
+    color: var(--very_light_gray);
+  }
 }
