@@ -11,8 +11,12 @@
 @media (min-width: 64rem) {
   .app_wrapper {
     background-image: url(../src/assets/bg-desktop-light.jpg);
-    background-size: contain;
     height: 305px;
+  }
+}
+
+@media (min-width: 90rem) {
+  .app_wrapper {
     justify-content: flex-start;
     gap: 40px;
     padding-top: 80px;

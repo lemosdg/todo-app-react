@@ -30,6 +30,12 @@
 
 @media (min-width: 64rem) {
   .form {
+    width: 50%;
+  }
+}
+
+@media (min-width: 90rem) {
+  .form {
     width: 40%;
   }
 

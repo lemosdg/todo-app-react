@@ -15,7 +15,7 @@
   padding: 8px 0;
   border-radius: 8px;
   background-color: var(--very_light_gray);
-  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, .15);
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.15);
 }
 
 .listTasks_content_text {
@@ -34,8 +34,17 @@
   color: var(--dark_grayish_blue);
 }
 
-
 @media (min-width: 64rem) {
+  .listTasks_wrapper {
+    top: -50px;
+    width: 50%;
+  }
+  .listTasks_content_text {
+    bottom: -80px;
+  }
+}
+
+@media (min-width: 90rem) {
   .listTasks_wrapper {
     top: -60px;
     width: 40%;

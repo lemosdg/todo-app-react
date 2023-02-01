@@ -3,9 +3,9 @@
 }
 
 .footer_tasks_wrapper {
-  display: flex;
+  display: grid;
+  grid-template-areas: "items clear";
   justify-content: space-between;
-  align-items: center;
   position: relative;
   top: 4px;
 }
@@ -15,6 +15,7 @@
   font-size: 1rem;
   font-weight: var(--font_medium);
   color: var(--dark_grayish_blue);
+  grid-area: items;
 }
 
 .footer_tasks_button {
@@ -25,4 +26,5 @@
   border: none;
   outline: none;
   background: transparent;
+  grid-area: clear;
 }
