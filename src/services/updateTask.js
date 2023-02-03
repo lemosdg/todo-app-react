@@ -1,7 +1,7 @@
 export async function updateTask ({ done, id }) {
   try {
     const response = await fetch(`${import.meta.env.VITE_API_URL}/${id}`, {
-      method: 'PATCH',
+      method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
       },
