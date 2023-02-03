@@ -14,7 +14,7 @@ export const useCleaner = () => {
   const allTasks = useSelector((state) => state.tasks.value);
 
   const clearTasks = async () => {
-    const tasksCompleted = allTasks.filter((task) => task.done === 1);
+    const tasksCompleted = allTasks.filter((task) => task.done === true);
 
     setIsCleaning(true);
 
