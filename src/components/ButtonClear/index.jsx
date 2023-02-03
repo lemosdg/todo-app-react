@@ -1,11 +1,11 @@
-import { useCleaner } from "../../hooks/useCleaner";
-import { useScheme } from "../../hooks/useScheme";
-import "./index.css";
+import { useCleaner } from '../../hooks/useCleaner'
+import { useScheme } from '../../hooks/useScheme'
+import './index.css'
 
 export const ButtonClear = () => {
   // Custom hooks
-  const { isCleaning, clearTasks } = useCleaner();
-  const { scheme } = useScheme();
+  const { isCleaning, clearTasks } = useCleaner()
+  const { scheme } = useScheme()
 
   return (
     <button
@@ -17,7 +17,7 @@ export const ButtonClear = () => {
       }
       disabled={isCleaning}
     >
-      {isCleaning ? "Cleaning" : "Clear Completed"}
+      {isCleaning ? 'Cleaning' : 'Clear Completed'}
     </button>
-  );
-};
+  )
+}

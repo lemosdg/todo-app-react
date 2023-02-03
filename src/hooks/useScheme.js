@@ -1,24 +1,24 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch } from 'react-redux'
 
-import { setScheme } from "../context/reducers/scheme/schemeSlice";
+import { setScheme } from '../context/reducers/scheme/schemeSlice'
 
-export const DARK_SCHEME = "dark-scheme";
-const INITIAL_SCHEME = "";
+export const DARK_SCHEME = 'dark-scheme'
+const INITIAL_SCHEME = ''
 
 export const useScheme = () => {
-  const scheme = useSelector((state) => state.scheme.value);
+  const scheme = useSelector((state) => state.scheme.value)
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
-  function changeScheme() {
+  function changeScheme () {
     if (scheme === INITIAL_SCHEME) {
-      return dispatch(setScheme(DARK_SCHEME));
+      return dispatch(setScheme(DARK_SCHEME))
     }
 
     if (scheme === DARK_SCHEME) {
-      return dispatch(setScheme(INITIAL_SCHEME));
+      return dispatch(setScheme(INITIAL_SCHEME))
     }
   }
 
-  return { scheme, changeScheme };
-};
+  return { scheme, changeScheme }
+}

@@ -1,41 +1,41 @@
-import { useState } from "react";
+import { useState } from 'react'
 
-import { ButtonDone } from "../ButtonDone";
-import { ButtonRemove } from "../ButtonRemove";
+import { ButtonDone } from '../ButtonDone'
+import { ButtonRemove } from '../ButtonRemove'
 
-import { useRefreshTasks } from "../../hooks/useRefreshTasks";
-import { useScheme } from "../../hooks/useScheme";
-import { updateTask } from "../../services/updateTask";
-import { deleteTask } from "../../services/deleteTask";
-import "./index.css";
+import { useRefreshTasks } from '../../hooks/useRefreshTasks'
+import { useScheme } from '../../hooks/useScheme'
+import { updateTask } from '../../services/updateTask'
+import { deleteTask } from '../../services/deleteTask'
+import './index.css'
 
 export const Task = ({ id, description, done }) => {
-  const [showBtnRemove, setShowBtnRemove] = useState(false);
+  const [showBtnRemove, setShowBtnRemove] = useState(false)
   // Custom hooks
-  const { refresTasks } = useRefreshTasks();
-  const { scheme } = useScheme();
+  const { refresTasks } = useRefreshTasks()
+  const { scheme } = useScheme()
 
   const updateTaskState = async () => {
-    const response = await updateTask({ done: !done, id });
+    const response = await updateTask({ done: !done, id })
     if (response.id > 0) {
-      refresTasks();
+      refresTasks()
     }
-  };
+  }
 
   const removeTask = async () => {
-    const response = await deleteTask({ id });
+    const response = await deleteTask({ id })
     if (response.ok) {
-      refresTasks();
+      refresTasks()
     }
-  };
+  }
 
   const onMouseOver = () => {
-    setShowBtnRemove(true);
-  };
+    setShowBtnRemove(true)
+  }
 
   const onMouseLeave = () => {
-    setShowBtnRemove(false);
-  };
+    setShowBtnRemove(false)
+  }
 
   return (
     <div
@@ -59,5 +59,5 @@ export const Task = ({ id, description, done }) => {
 
       {showBtnRemove && <ButtonRemove onClick={removeTask} />}
     </div>
-  );
-};
+  )
+}

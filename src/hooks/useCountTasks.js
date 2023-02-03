@@ -1,17 +1,17 @@
-import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 
 export const useCountTasks = () => {
-  const [tasksLeft, setTasksLeft] = useState(0);
-  const tasks = useSelector((state) => state.tasks.value);
+  const [tasksLeft, setTasksLeft] = useState(0)
+  const tasks = useSelector((state) => state.tasks.value)
 
   useEffect(() => {
     const recountTasks = () => {
-      setTasksLeft(tasks.filter((task) => task.done === 0).length);
-    };
+      setTasksLeft(tasks.filter((task) => task.done === 0).length)
+    }
 
-    recountTasks();
-  }, [tasks]);
+    recountTasks()
+  }, [tasks])
 
-  return { tasksLeft };
-};
+  return { tasksLeft }
+}

@@ -1,9 +1,9 @@
-import { useScheme } from "../../hooks/useScheme";
-import "./index.css";
+import { useScheme } from '../../hooks/useScheme'
+import './index.css'
 
 export const FilterTasksButton = ({ status, displayText, onClick }) => {
   // Custom hooks
-  const { scheme } = useScheme();
+  const { scheme } = useScheme()
 
   return (
     <button
@@ -16,5 +16,5 @@ export const FilterTasksButton = ({ status, displayText, onClick }) => {
     >
       {displayText}
     </button>
-  );
-};
+  )
+}

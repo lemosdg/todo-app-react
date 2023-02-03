@@ -1,51 +1,51 @@
-import { useState } from "react";
+import { useState } from 'react'
 
-import { ButtonDone } from "../ButtonDone";
+import { ButtonDone } from '../ButtonDone'
 
-import { useRefreshTasks } from "../../hooks/useRefreshTasks";
-import { useScheme } from "../../hooks/useScheme";
-import { createTask } from "../../services/createTask";
-import "./index.css";
+import { useRefreshTasks } from '../../hooks/useRefreshTasks'
+import { useScheme } from '../../hooks/useScheme'
+import { createTask } from '../../services/createTask'
+import './index.css'
 
 export const Form = () => {
-  const [description, setDescription] = useState("");
-  const [isDone, setIsDone] = useState(false);
+  const [description, setDescription] = useState('')
+  const [isDone, setIsDone] = useState(false)
 
   // custom hooks
-  const { refresTasks } = useRefreshTasks();
-  const { scheme } = useScheme();
+  const { refresTasks } = useRefreshTasks()
+  const { scheme } = useScheme()
 
   const onSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     if (description.trim().length > 0) {
-      const response = await createTask({ description, done: isDone });
+      const response = await createTask({ description, done: isDone })
 
       if (response.id !== undefined) {
-        setDescription("");
-        setIsDone(false);
-        refresTasks();
+        setDescription('')
+        setIsDone(false)
+        refresTasks()
       }
     }
-  };
+  }
 
   const handleChangeIsDone = () => {
-    setIsDone(!isDone);
-  };
+    setIsDone(!isDone)
+  }
 
   return (
     <form onSubmit={onSubmit} className={`form ${scheme}`}>
       <ButtonDone done={isDone} onClick={handleChangeIsDone} />
 
       <input
-        type="text"
+        type='text'
         value={description}
-        name="description"
-        placeholder="Crete a new todo..."
+        name='description'
+        placeholder='Crete a new todo...'
         className={`form_input ${scheme}`}
         onChange={(e) => setDescription(e.target.value)}
         required
       />
     </form>
-  );
-};
+  )
+}

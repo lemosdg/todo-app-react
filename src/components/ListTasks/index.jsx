@@ -1,53 +1,53 @@
-import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
+import { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd'
 
-import { Task } from "../Task";
-import { FooterTasks } from "../FooterTasks";
-import { FilterTasks } from "../FilterTasks";
+import { Task } from '../Task'
+import { FooterTasks } from '../FooterTasks'
+import { FilterTasks } from '../FilterTasks'
 
-import { setTasks } from "../../context/reducers/tasks/tasksSlice";
-import { useRefreshTasks } from "../../hooks/useRefreshTasks";
-import { useScheme } from "../../hooks/useScheme";
-import { reorder } from "../../lib/reorder_list";
-import "./index.css";
+import { setTasks } from '../../context/reducers/tasks/tasksSlice'
+import { useRefreshTasks } from '../../hooks/useRefreshTasks'
+import { useScheme } from '../../hooks/useScheme'
+import { reorder } from '../../lib/reorder_list'
+import './index.css'
 
 export const ListTasks = () => {
   // Custom hooks
-  const { refresTasks } = useRefreshTasks();
-  const { scheme } = useScheme();
+  const { refresTasks } = useRefreshTasks()
+  const { scheme } = useScheme()
 
   // Redux
-  const tasks = useSelector((state) => state.tasks.value);
-  const dispatch = useDispatch();
+  const tasks = useSelector((state) => state.tasks.value)
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    refresTasks();
-  }, []);
+    refresTasks()
+  }, [])
 
   const onDragEnd = (result) => {
-    const { source, destination } = result;
+    const { source, destination } = result
 
     if (!destination) {
-      return;
+      return
     }
 
     if (
       source.index === destination.index &&
       source.droppableId === destination.droppableId
     ) {
-      return;
+      return
     }
 
-    const newOrder = reorder(tasks, source.index, destination.index);
+    const newOrder = reorder(tasks, source.index, destination.index)
 
-    dispatch(setTasks(newOrder));
-  };
+    dispatch(setTasks(newOrder))
+  }
 
   return (
     <section className={`listTasks ${scheme}`}>
       <DragDropContext onDragEnd={onDragEnd}>
-        <Droppable droppableId="list">
+        <Droppable droppableId='list'>
           {(droppableProvided) => (
             <ul
               {...droppableProvided.droppableProps}
@@ -90,5 +90,5 @@ export const ListTasks = () => {
         </Droppable>
       </DragDropContext>
     </section>
-  );
-};
+  )
+}
