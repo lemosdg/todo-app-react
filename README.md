@@ -15,11 +15,13 @@
 
 1. Clona este repositorio `git clone https://github.com/carlosqdev/todo-app-react.git`
 2. Ve a la carpeta del proyecto `cd todo-app-react`
-3. En la raiz del proyecto crea un archivo llamado **.env.local** y dentro debes crear una variable de entorno como esta `VITE_API_URL=http://nombre_del_servidor:puerto_del_servidor/api/todos`.
+3. En la raiz del proyecto crea un archivo llamado **.env.local** y dentro debes crear una variable de entorno como esta `VITE_API_URL=http://nombre_del_servidor:puerto_del_servidor/api/tasks`.
 
 Reemplaza **nombre_del_servidor** por **localhost** si estas ejecutando el API en tu computadora local.
 
 Reemplaza **puerto_del_servidor** por el puerto con el que tengas configurado tu API.
+
+**El API con la que trabaja esta aplicación puedes encontrarla en este repositorio [rest-api-todo](https://github.com/carlosqdev/rest-api-todo)**
 
 4. Instalar dependencias `npm install`
 
